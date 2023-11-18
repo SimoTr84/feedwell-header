@@ -1,0 +1,75 @@
+main {
+  .wpcf7 {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        margin-bottom: 1.5rem;
+      }
+    }
+    select {
+      @extend %input_style_real_peas;
+      height: 50px;
+      -moz-appearance: button;
+      -webkit-appearance: button;
+      padding: 0 0.75rem !important;
+    }
+    textarea {
+      @extend %input_style_real_peas;
+    }
+    input {
+      &[type="submit"]{
+        text-transform: none;
+      }
+      &[type="text"],
+      &[type="email"] {
+        @extend %input_style_real_peas;
+      }
+    }
+  }
+}
+
+.placeholder-left {
+  textarea,
+  input,
+  select {
+    &::placeholder {
+      text-align: left !important;
+    }
+  }
+}
+.placeholder-lowercase {
+  textarea,
+  input,
+  select {
+    text-transform: none;
+    &::placeholder {
+      text-transform: none !important;
+    }
+  }
+}
+
+.wpcf7-response-output {
+
+}
+.wpcf7 {
+  form {
+    &.sent {
+      .wpcf7-response-output {
+        @extend %success;
+        border-color: $secondary-color;
+        margin: 0 auto;
+        display: table;
+      }
+    }
+    &.failed {
+      .wpcf7-response-output {
+        @extend %error;
+        border-color: $orange-1000;
+        margin: 0 auto;
+        display: table;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+//GDPR
+.gdpr {
+  &.gdpr-privacy-bar {
+    background: $light-gray;
+    color: $primary-color;
+    .gdpr-wrapper {
+      .gdpr-content {
+        p {
+          color: $primary-color;
+          font-size: 0.95rem;
+          font-family: $body-font-family;
+        }
+      }
+      .gdpr-close {
+        color: $primary-color;
+      }
+    }
+    .gdpr-buttons {
+      .gdpr-preferences {
+        //hide
+        display: none;
+      }
+      .gdpr-agreement {
+        @extend %button;
+        @extend %button_primary_primary_hollow;
+        text-shadow: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+//GDPR pages
+.gdpr-request-form {
+  textarea {
+    @extend .input_style_real_peas;
+  }
+  input {
+    &[type="submit"]{
+      @extend %button;
+      @extend %button_primary;
+      text-shadow: none;
+      box-shadow: none;
+    }
+    &[type="email"],
+    &[type="text"]{
+      @extend .input_style_real_peas;
+    }
+  }
+  .g-recaptcha {
+    margin: 2rem 0;
+  }
+}

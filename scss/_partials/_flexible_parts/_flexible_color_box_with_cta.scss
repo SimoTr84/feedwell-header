@@ -1,0 +1,10 @@
+section {
+  &.block-color-box-with-cta {
+    background-color: $pink-100;
+    padding: 4.5rem 0;
+    .cta-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

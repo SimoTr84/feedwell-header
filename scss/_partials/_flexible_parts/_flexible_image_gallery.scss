@@ -1,0 +1,19 @@
+section {
+  &.flexible-image-gallery-grid {
+    .grid-posts-action-control {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .grid-image-gallery-row {
+      .image {
+        &:hover {
+          cursor: pointer;
+        }
+        img {
+          object-fit: cover;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

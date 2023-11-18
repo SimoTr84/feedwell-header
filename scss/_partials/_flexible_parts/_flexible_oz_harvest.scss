@@ -1,0 +1,23 @@
+.flexible-oz-harvest {
+  background-color: $yellow;
+  padding: 2rem 0;
+  box-shadow: 0px 0px 0px 1px $primary-color;
+  border-bottom: 1px solid $primary-color;
+  .image {
+    @include breakpoint(small down) {
+      margin-bottom: 1rem;
+    }
+    img {
+      max-width: 10rem;
+    }
+  }
+  .text {
+    font-family: $header-font-family;
+    font-weight: $header-font-weight;
+    font-size: rem-calc(49px);
+    line-height: 1;
+  }
+  .grid-x {
+    align-items: center;
+  }
+}

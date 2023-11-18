@@ -1,0 +1,73 @@
+.flexible-delivery-locations-carousel {
+  background-color: $primary-color;
+  .delivery-locations-carousel {
+    padding: 0 5rem;
+    @include breakpoint(medium down) {
+      padding: 0 1.5rem;
+    }
+    @include breakpoint(small down) {
+      padding: 0 2.5rem;
+    }
+  }
+  .slick-track {
+    display: flex;
+    align-items: center;
+  }
+  .button {
+    margin-bottom: 0;
+    width: 100%;
+    @include breakpoint(small down) {
+      padding: 0.5rem 0.5rem;
+      font-size: 0.85rem;
+    }
+  }
+  .slick-slide {
+    margin: 0 0.5rem;
+  }
+  .slick-slider {
+    .slick-arrow {
+      &.slick-prev {
+        @include breakpoint(small down) {
+          left:0.5rem;
+        }
+        @include breakpoint(medium only) {
+          left: -3rem;
+        }
+        @include breakpoint(large up) {
+          left: 2rem;
+        }
+        &:before {
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("images/slider/left-arrow-white.svg");
+        }
+      }
+      &.slick-next {
+        @include breakpoint(small down) {
+          right: 0.5rem;
+        }
+        @include breakpoint(medium only) {
+          right: -3rem;
+        }
+        @include breakpoint(large up) {
+          right: 3rem;
+        }
+        &:before {
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("images/slider/right-arrow-white.svg");
+        }
+      }
+      width: 35px;
+      height: 35px;
+      background-color: $orange-1000;
+      border-radius: 35px;
+    }
+  }
+}

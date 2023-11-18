@@ -1,0 +1,65 @@
+//partnerships
+.partnerships {
+  padding: 0;
+  .partnerships-carousel {
+    .single-partnership {
+      &:active,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .partnership-wrapper {
+        .partnership-content {
+          .left-part {
+            @include breakpoint(small down){
+              padding-bottom: 1rem;
+            }
+            img {
+              max-width: 75%;
+              @include breakpoint(small down){
+                max-width: 40%;
+                margin: 0 auto;
+              }
+            }
+          }
+          .action-controls {
+            a {
+              margin-bottom: 0;
+            }
+          }
+          .right-part {
+            font-size: rem-calc(28px);
+            font-weight: 300;
+            line-height: initial;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: left;
+            line-height: 1.3;
+            @include breakpoint(small down){
+              text-align: center;
+            }
+            @include breakpoint(medium down){
+              font-size: rem-calc(24px);
+            }
+            a {
+              text-decoration: underline;
+              @include transition(.3s);
+              &:hover {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    .slick-arrow {
+      &.slick-prev {
+        left: 0.5rem;
+      }
+      &.slick-next {
+        right: 0.5rem;
+      }
+    }
+  }
+}

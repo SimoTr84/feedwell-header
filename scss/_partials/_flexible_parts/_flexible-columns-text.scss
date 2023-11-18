@@ -1,0 +1,24 @@
+.flexible-columns-text {
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  
+  .heading {
+    margin-bottom: 2rem;
+
+    h2,
+    h3 {
+      @include breakpoint(large up){
+        font-size: rem-calc(80px);
+      }
+      @include breakpoint(medium only){
+        font-size: rem-calc(55px);
+      }
+      @include breakpoint(small down){
+        font-size: rem-calc(45px);
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+}

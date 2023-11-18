@@ -1,0 +1,61 @@
+// import fonts
+// ------------------------------------------------
+@font-face {
+  font-family: 'Hackney Vector';
+  src: url('./fonts/Hackney-Vector.woff2') format('woff2'),
+      url('./fonts/Hackney-Vector.woff') format('woff'),
+      url('./fonts/Hackney-Vector.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('./fonts/GTWalsheim-LightOblique.woff2') format('woff2'),
+        url('./fonts/GTWalsheim-LightOblique.woff') format('woff'),
+        url('./fonts/GTWalsheim-LightOblique.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('./fonts/GTWalsheim-Bold.woff2') format('woff2'),
+        url('./fonts/GTWalsheim-Bold.woff') format('woff'),
+        url('./fonts/GTWalsheim-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('./fonts/GTWalsheimRegular.woff2') format('woff2'),
+        url('./fonts/GTWalsheimRegular.woff') format('woff'),
+        url('./fonts/GTWalsheimRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('./fonts/GTWalsheim-Light.woff2') format('woff2'),
+        url('./fonts/GTWalsheim-Light.woff') format('woff'),
+        url('./fonts/GTWalsheim-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GT Walsheim';
+    src: url('./fonts/GTWalsheim-Medium.woff2') format('woff2'),
+        url('./fonts/GTWalsheim-Medium.woff') format('woff'),
+        url('./fonts/GTWalsheim-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

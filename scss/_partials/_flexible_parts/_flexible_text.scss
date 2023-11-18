@@ -1,0 +1,44 @@
+section {
+  &.flexible-text {
+    .grid-container {
+      @include breakpoint(small down){
+        width: 100%;
+      }
+    }
+    &#home-hero-banner {
+      .full-height {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+      }
+    }
+    &.parallax-section {
+      position: relative;
+      padding: 4rem 0;
+      @include breakpoint(small down){
+        padding: 0 0;
+      }
+      .parallax-image {
+        position: relative;
+        img {
+          position: absolute;
+          margin-top: 80%;
+          max-width: calc( 100% + 7rem);
+          @include box-shadow($shadow-depth-custom);
+          @include breakpoint(small down){
+            max-width: calc( 100% + -8rem);
+          }
+        }
+      }
+    }
+    .flexible-section-heading {
+      h3 {
+        font-size: rem-calc(48px);
+        @include breakpoint(small down){
+          font-size: rem-calc(30px);
+        }
+      }
+    }
+  }
+}

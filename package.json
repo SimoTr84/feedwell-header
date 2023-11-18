@@ -1,0 +1,16 @@
+{
+  "name": "feedwell-header-copy",
+  "version": "1.0.0",
+  "description": "feedwell like header",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simo",
+  "license": "ISC",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "foundation-sites": "^6.8.1",
+    "jquery": "^3.7.1"
+  }
+}

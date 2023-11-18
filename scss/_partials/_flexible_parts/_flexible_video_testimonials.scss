@@ -1,0 +1,46 @@
+.flexible-video-testimonials {
+  padding: 2rem 0 0 0;
+  box-shadow: 0px 0px 0px 1px $primary-color;
+  border-bottom: 1px solid $primary-color;
+  .title {
+    margin-bottom: 2rem;
+    h3 {
+      &.h1-custom-1 {
+        color: $orange-800;
+      }
+    }
+    @include breakpoint(small down) {
+      margin-bottom: 1rem;
+    }
+  }
+  .iframe-video {
+    .button-arrow {
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 0;
+      padding: 1.25rem 1.25rem;
+      box-shadow: 0px 0px 0px 1px $primary-color;
+      @include breakpoint(small down) {
+        padding: 0.75rem 1rem;
+      }
+      &--regular {
+        &::before {
+          right: 1rem;
+          top: 50%;
+          transform: translateY(-50%);
+          background-color: $orange-800;
+          @include breakpoint(small down) {
+            right: 0.25rem;
+          }
+        }
+        &::after {
+          right: 1.45rem;
+          @include breakpoint(small down) {
+            right: 0.45rem;
+          }
+        }
+      }
+    }
+  }
+}

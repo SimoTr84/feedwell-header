@@ -1,0 +1,85 @@
+//images carousel
+section {
+  &.flexible-images-carousel {
+    @media(min-width: 1024px) and (max-width: 1340px) {
+      padding: 2rem 5rem;
+    }
+    @include breakpoint(medium down) {
+      padding: 2rem 5rem;
+    }
+    @include breakpoint(small down) {
+      padding: 1rem 2rem 2rem 2rem;
+    }
+    .slick-slider {
+      .slick-slide {
+        img {
+          max-height: 4rem;
+          object-fit: contain;
+          max-width: 8rem;
+          width: 100%;
+        }
+      }
+    }
+    .title {
+      margin-bottom: 2rem;
+      @include breakpoint(small down) {
+        margin-bottom: 0.25rem;
+      }
+      h1, h2, h3, h4, h5 {
+        color: $orange-1000;
+        font-size: rem-calc(32px);
+        @include breakpoint(large up) {
+          font-size: rem-calc(80px);
+        }
+      }
+    }
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+    .slick-arrow {
+      &.slick-prev {
+        @include breakpoint(small down) {
+          left: -2rem;
+        }
+        @include breakpoint(medium only) {
+          left: -3rem;
+        }
+        @include breakpoint(large up) {
+          left: -3rem;
+        }
+        &:before {
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("images/slider/left-arrow-white.svg");
+        }
+      }
+      &.slick-next {
+        @include breakpoint(small down) {
+          right: -2rem;
+        }
+        @include breakpoint(medium only) {
+          right: -3rem;
+        }
+        @include breakpoint(large up) {
+          right: -3rem;
+        }
+        &:before {
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("images/slider/right-arrow-white.svg");
+        }
+      }
+      width: 35px;
+      height: 35px;
+      background-color: $orange-1000;
+      border-radius: 35px;
+    }
+  }
+}

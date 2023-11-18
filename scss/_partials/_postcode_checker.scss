@@ -1,0 +1,263 @@
+.home-delivery-shipping {
+  .checkout-postcode,
+  .rp-postcode-checker {
+    .office-catering {
+      display: none;
+    }
+  }
+}
+.office-catering-shipping {
+  .checkout-postcode,
+  .rp-postcode-checker {
+    .home-delivery {
+      display: none;
+    }
+  }
+}
+.checkout-postcode {
+  &.checkout {
+    .postcode-wrapper {
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+  }
+}
+.checkout-postcode,
+.rp-postcode-checker {
+  position: relative;
+  .home-delivery {
+    display: none;
+  }
+  .office-catering {
+    width: 100%;
+  }
+  &.widget {
+    input {
+      background-color: transparent;
+    }
+  }
+  .postcode-wrapper {
+    position: relative;
+    &:before {
+      content: "";
+      background-color: $primary-color;
+      position: absolute;
+      border-radius: 2rem;
+      top: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      right: 0;
+    }
+    &:after {
+      content: "";
+      background: url("images/icons/chevron-next-green-200.svg");
+      background-repeat: repeat;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0.65rem;
+      right: 0.5rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      @include breakpoint(medium down) {
+        right: 0.35rem;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+  &.checkout {
+    border-top: 0;
+    border-bottom: 0;
+    .results {
+      .result {
+        span {
+          &.delivery-label {
+            &:before {
+              background-color: $silk;
+            }
+          }
+        }
+      }
+    }
+  }
+  input {
+    @extend %input_style_two_real_peas;
+    height: 50px;
+  }
+  .results {
+    display: flex;
+    flex-direction: row;
+
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    u {
+      font-weight: bold;
+    }
+
+    .result {
+      > span {
+        padding-left: 2rem;
+        position: relative;
+        &.delivery-label {
+          &:before {
+            content: "";
+            border-radius: 2rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-color: $grey-200;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+          &:after {
+            content: "";
+            width: 0.75rem;
+            height: 0.75rem;
+            position: absolute;
+            top: 50%;
+            left: 0.4rem;
+            transform: translateY(-50%);
+          }
+        }
+        &.delivery-comments {
+          display: block;
+        }
+      }
+      &.yes {
+        span {
+          &.delivery-label {
+            &:after {
+              background: url('images/icons/check_icon.svg');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+        .delivery-days {
+          display: none;
+        }
+      }
+      &.no {
+
+        .delivery-weekend {
+          display: none;
+        }
+         
+        span {
+          &.delivery-label {
+            &:after {
+              background: url('images/icons/close_icon.svg');
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: contain;
+            }
+          }
+        }
+        .delivery-days {
+          display: none;
+        }
+      }
+    }
+    .delivery-days {
+      padding-left: 2rem;
+      .delivery-days-grid {
+        margin-top: 0.25rem;
+        > span {
+          &.day {
+            background-color: $primary-color;
+            color: $white;
+            padding: 0.27rem;
+            font-size: 13px;
+            width: 2rem;
+            height: 1.5rem;
+            display: inline-block;
+            text-align: center;
+            vertical-align: middle;
+            margin-right: 0.2rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
+.ui-menu {
+  &.ui-widget {
+    max-height: 15rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: $body-font-family;
+    font-size: 0.9rem;
+    border: 1px solid $medium-gray;
+    border-radius: 1rem;
+    padding: 0.5rem 0.85rem;
+    li {
+      display: block;
+      > div {
+        border: 0;
+        @include transition(.3s);
+        background-color: transparent;
+        background: transparent;
+        color: $primary-color;
+        font-weight: 300 !important;
+        font-size: 0.9rem;
+        padding: 0.2rem 0.15rem;
+        margin: 0 !important;
+        &:active,
+        &:focus,
+        &:hover {
+          border: 0;
+          color: $secondary-color;
+          text-decoration: underline;
+          font-size: 0.9rem;
+          font-weight: 300 !important;
+          margin: 0 !important;
+        }
+      }
+    }
+  }
+}
+.rp-main-panel {
+  .rp-postcode-checker.shop {
+    @include breakpoint(medium down) {
+      .grid-container {
+        border-radius: 0;
+      }
+      padding: 0 0 0 0;
+      .medium-4 {
+        padding-top: 0.5rem;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .medium-6 {
+        width: calc(100%);
+        padding-bottom: 1rem;
+      }
+    }
+  }
+}
+.products-grid {
+  @media(min-width: 1024px) and (max-width: 1279px) {
+    margin-top: 4rem;
+  }
+}
+body {
+  &.woocommerce-page {
+    @media(max-width: 1279px) {
+      .rp-main-panel {
+        > .rp-postcode-checker {
+          display: none;
+        }
+      }
+    }
+  }
+}

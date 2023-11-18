@@ -1,0 +1,116 @@
+.flexible-content-carousel {
+  box-shadow: 0px 0px 0px 1px $primary-color;
+  @media(min-width: 1024px) and (max-width: 1340px) {
+    padding: 1rem 5rem;
+  }
+  @include breakpoint(medium down) {
+    padding: 1rem 5rem;
+  }
+  @include breakpoint(small down) {
+    padding: 2rem 2rem 0 2rem;
+  }
+  .content-block-wrapper {
+    > a {
+      @include transition(0.3s);
+      &:hover {
+        h3 {
+          text-decoration: underline;
+          text-underline-offset: 2px;
+        }
+      }
+    }
+  }
+  .content-block-inner {
+    text-align: center;
+    &.text {
+      h3 {
+        font-family: $body-font-family;
+        font-size: rem-calc(20px);
+        @include transition(0.3s);
+      }
+    }
+  }
+  .slick-slider {
+    .slick-slide {
+      margin: 0 0.5rem;
+      img {
+        max-height: 11rem;
+        object-fit: contain;
+        width: 100%;
+        margin: 0 auto;
+        @include breakpoint(large only) {
+          max-height: 8.5rem;
+          min-height: 5rem;
+        }
+        @include breakpoint(medium only) {
+          max-height: 6.5rem;
+          min-height: 5rem !important;
+        }
+        @include breakpoint(small down) {
+          max-height: 5.5rem;
+          min-height: 5rem !important;
+        }
+      }
+    }
+    .slick-arrow {
+      &.slick-prev {
+        @include breakpoint(small down) {
+          left: -2rem;
+        }
+        @include breakpoint(medium only) {
+          left: -3rem;
+        }
+        @include breakpoint(large up) {
+          left: -3rem;
+        }
+        &:before {
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("images/slider/left-arrow-white.svg");
+        }
+      }
+      &.slick-next {
+        @include breakpoint(small down) {
+          right: -2rem;
+        }
+        @include breakpoint(medium only) {
+          right: -3rem;
+        }
+        @include breakpoint(large up) {
+          right: -3rem;
+        }
+        &:before {
+          width: 25px;
+          height: 25px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background: url("images/slider/right-arrow-white.svg");
+        }
+      }
+      width: 35px;
+      height: 35px;
+      background-color: $orange-1000;
+      border-radius: 35px;
+      top: 30%;
+      transform: translateY(-30%);
+    }
+  }
+  .title {
+    margin-bottom: 2rem;
+    @include breakpoint(small down) {
+      margin-bottom: 0.25rem;
+    }
+    h1, h2, h3, h4, h5 {
+      color: $orange-1000;
+      font-size: rem-calc(32px);
+      @include breakpoint(large up) {
+        font-size: rem-calc(80px);
+      }
+    }
+  }
+}
+

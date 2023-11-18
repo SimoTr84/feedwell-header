@@ -1,0 +1,451 @@
+.cross-sells {
+  h3 {
+    margin-bottom: 1rem;
+  }
+}
+.button {
+  font-weight: 500;
+  letter-spacing: 1px;
+  word-spacing: 0.15rem;
+  line-height: 1;
+  &.wide {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  &:active,
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+  &.svg-icon {
+    svg {
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle;
+    }
+  }
+  &.light {
+    font-weight: 300;
+  }
+  @include transition(.3s);
+  &.primary {
+    &:hover {
+      background-color: $cutty-sark;
+    }
+    &.hollow {
+      &:hover {
+        border-color: $white;
+        color: $white;
+      }
+    }
+    &.white {
+      color: $white;
+      border-color: $white;
+    }
+  }
+  &.secondary {
+    &.hollow {
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+    }
+    color: $primary-color;
+    text-transform: none;
+  }
+  &.stone-200 {
+    background-color: $stone-200;
+    color: $white;
+    border-color: $stone-200;
+    &:hover {
+      border-color: $primary-color;
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+  &.green-200 {
+    font-weight: $primary-font-light;
+  }
+  &.silk {
+    background-color: $silk;
+    color: $white;
+    border-color: $silk;
+    &:hover {
+      border-color: $primary-color;
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+  &.orange {
+    color: $white;
+    &:hover {
+      color: $white;
+      background-color: darken($orange-1000, 10%);
+    }
+  }
+  &.pink {
+    color: $primary-color;
+    background-color: $pink-100;
+    &:hover {
+      color: $white;
+      background-color: darken($pink-100, 10%);
+    }
+  }
+}
+
+a {
+  &.link-button {
+    @extend .button;
+   &.primary {
+     @extend .primary;
+   }
+   &.hollow {
+     @extend .hollow;
+   }
+  }
+}
+main {
+  p {
+    a {
+      @include transition(.3s);
+      text-decoration: underline;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+footer {
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+%button {
+  font-weight: 500;
+  font-size: 0.9rem;
+  border: 1px solid transparent;
+  border-radius: $button-radius;
+  margin: $button-margin;
+  padding: $button-padding;
+  display: inline-block;
+  vertical-align: middle;
+  letter-spacing: 1px;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  word-spacing: 0.15rem;
+  @include transition(.3s);
+  &:active,
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+%button_primary {
+  color: $white;
+  background-color: $primary-color;
+  &:hover {
+    background-color: $button-background-hover;
+  }
+  &[disabled],
+  &:disabled{
+    background-color: $medium-gray;
+    &:hover {
+      cursor: not-allowed;
+      background-color: $medium-gray;
+    }
+  }
+}
+%button_secondary {
+  color: $white;
+  background-color: $secondary-color;
+  &:hover {
+    background-color: scale-color($secondary-color, $lightness: -15%);
+  }
+}
+%button_primary_small {
+  padding: 0.7rem 1rem;
+  font-size: 0.75rem;
+  color: $white;
+  background-color: $primary-color;
+  &:hover {
+    background-color: $button-background-hover;
+  }
+}
+%button_tiny {
+  font-size: .6rem !important;
+}
+%button_primary_primary_hollow {
+  color: $primary-color;
+  background-color: transparent;
+  border-color: $primary-color;
+  &:hover {
+    background-color: $primary-color;
+    color: $white;
+    border-color: $white;
+  }
+}
+%social_icon {
+  padding: 0.56rem;
+  text-align: center;
+  width: 2rem;
+  height: 2rem;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  // box-shadow: inset 0 0 0 1px $primary-color;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+  i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  &:hover {
+    background: $primary-color;
+    i {
+      color: $white;
+    }
+  }
+}
+
+%button_circle {
+  background: $secondary-color;
+  border-radius: 2rem;
+  width: 2.15rem;
+  height: 2.15rem;
+  &:hover {
+    background: #e58782;
+    cursor: pointer;
+  }
+}
+.fw-button-hollow {
+  @include button( false, $primary-color, transparent, $primary-color, hollow);
+  font-weight: 500;
+  &.expanded {
+    width: 100%;
+  }
+}
+.fw-button-primary {
+  @include button( false, $primary-color, darken($primary-color, 10%), $white, solid);
+  font-weight: 500;
+  &.expanded {
+    width: 100%;
+  }
+}
+.fw-button-secondary {
+  @include button( false, $secondary-color, darken($secondary-color, 10%), $white, solid);
+  font-weight: 500;
+  &.expanded {
+    width: 100%;
+  }
+}
+.fw-button-orange {
+  @include button( false, $orange-1000, darken($orange-1000, 10%), $white, solid);
+  font-weight: 500;
+  &.expanded {
+    width: 100%;
+  }
+}
+.button-group-joiner {
+  padding: 0.85em 0.5rem;
+  background-color: $white;
+  border-radius: 2rem;
+  transition: background-color 0.25s ease-out,color 0.25s ease-out;
+  font-family: inherit;
+  font-size: 0.75rem;
+  -webkit-appearance: none;
+  line-height: 1;
+  text-align: center;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  top: 0.25rem;
+  transform: translateX(-50%);
+}
+.button-arrow {
+  border-radius: 2rem;
+  position: absolute;
+  line-height: 1;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 0;
+  font-family: $body-font-family;
+  font-weight: $primary-font-light;
+  width: 100%;
+  @include transition(.3s);
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:before {
+    content: "";
+    background-color: $primary-color;
+    position: absolute;
+    border-radius: 2rem;
+    top: 0;
+    @include transition(.3s);
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    @include transition(.3s);
+  }
+  &--regular {
+    width: calc(100% - 0.25rem);
+    @include breakpoint(medium down) {
+      font-size: 0.75rem;
+      padding: 0.62rem 1.25rem;
+    }
+    &:before {
+      width: 2.5rem;
+      height: 2.5rem;
+      right: -0.25rem;
+      @include breakpoint(medium down) {
+        width: 2rem;
+        height: 2rem;
+        right: 0;
+      }
+    }
+    &:after {
+      right: 0.35rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      @include breakpoint(medium down) {
+        right: 0.35rem;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+  &--large {
+    width: calc(100% - 0.5rem);
+    &:before {
+      width: 3rem;
+      height: 3rem;
+      right: -0.5rem;
+      @include breakpoint(medium only) {
+        width: 2.75rem;
+        height: 2.75rem;
+      }
+      @include breakpoint(small down) {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      @include breakpoint(large only){
+        width: 2.65rem;
+        height: 2.65rem;
+        @media(max-height: 768px){
+          width: 2.65rem;
+          height: 2.65rem;
+        }
+      }
+    }
+    &:after {
+      right: 0.1rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      @include breakpoint(small down) {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+  &--white {
+    background-color: $white;
+    color: $primary-color;
+    &:after {
+      background: url("images/icons/chevron-next-white.svg");
+      background-repeat: repeat;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+    &:hover {
+      background-color: $primary-color;
+      color: $white;
+      &:before {
+        background-color: $pink-100;
+      }
+      &:after {
+        background: url("images/icons/chevron-next.svg");
+        background-repeat: repeat;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+  &--orange {
+    background-color: $orange-800;
+    color: $white;
+    &:hover {
+      background-color: $green-50;
+      color: $primary-color;
+      &:before {
+        background-color: $orange-800;
+      }
+      &:after {
+        background: url("images/icons/chevron-next.svg");
+        background-repeat: repeat;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+    &:after {
+      background: url("images/icons/chevron-next-orange.svg");
+      background-repeat: repeat;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+}
+
+.clear {
+  @include transition(0.3s);
+  &.secondary {
+    color: $orange-800;
+    &.arrow {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        @include transition(.3s);
+        background: url("images/icons/chevron-next-orange.svg");
+        background-repeat: repeat;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 0.85rem;
+        height: 0.85rem;
+        @include transition(0.3s);
+      }
+      &:hover {
+        color: $primary-color;
+        &:after {
+          background: url("images/icons/chevron-next.svg");
+        }
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}

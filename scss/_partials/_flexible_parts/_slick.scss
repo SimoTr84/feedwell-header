@@ -1,0 +1,144 @@
+.slick-slider {
+  .slick-slide {
+    height: auto;
+  }
+  //arrow
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0;
+    z-index: 2;
+    width: 45px;
+    height: 45px;
+    &:focus,
+    &:active {
+      @include no-shadow();
+      outline:none;
+
+    }
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &.slick-prev {
+      left: 2rem;
+      &:before {
+        content:'';
+        background: url('images/slider/left-arrow.svg');
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    &.slick-next {
+      right: 2rem;
+      &:before {
+        content:'';
+        background: url('images/slider/right-arrow.svg');
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+}
+
+
+.rp-carousel {
+  &--product {
+    .slick-slider {
+      opacity: 0;
+      @include transition(.3s);
+      &.slick-initialized {
+        opacity: 1;
+      }
+      .slick-dots {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        left: 6rem;
+        bottom: -2.1rem;
+        > li:only-child {
+          display: none;
+        }
+        li {
+          display: inline-block;
+          width: 0.65rem;
+          height: 0.65rem;
+          border-radius: 1rem;
+          margin-right: 0.25rem;
+          font-size: 0;
+          border: 1px solid $primary-color;
+          &:hover {
+            cursor: pointer;
+          }
+          &.slick-active {
+            background-color: $primary-color;
+          }
+        }
+      }
+      .slick-slide {
+        @include breakpoint(medium up){
+          max-height: 27.5rem;
+        }
+        @include breakpoint(small down){
+          max-height: 17.5rem;
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+      .slick-arrow {
+        border-radius: 2rem;
+        border: 1px solid $secondary-color;
+        background-color: $secondary-color;
+        width: 2rem;
+        height: 2rem;
+        top: auto;
+        transform: unset;
+        &:focus,
+        &:active {
+          outline: none;
+          box-shadow: none;
+        }
+        &:before {
+          background-repeat: no-repeat;
+          background-position: center center;
+          width: 1rem;
+          height: 1rem;
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+        &.slick-prev {
+          left: 0;
+          bottom: -3rem;
+          &:before {
+            background: url('images/slider/left-arrow-primary.svg');
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        &.slick-next {
+          left: 3rem;
+          bottom: -3rem;
+          &:before {
+            right: 0;
+            background: url('images/slider/right-arrow-primary.svg');
+          }
+        }
+      }
+
+    }
+  }
+}

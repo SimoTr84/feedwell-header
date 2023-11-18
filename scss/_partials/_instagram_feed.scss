@@ -1,0 +1,97 @@
+#instagram-feed {
+  padding: 2rem 0;
+  @include breakpoint(small down){
+    padding: 0 0;
+  }
+  .sbi_link {
+     a {
+       font-size: 1rem;
+     }
+  }
+  .section-title {
+    margin-bottom: 1rem;
+
+    a {
+      text-decoration: underline;
+    }
+    @include breakpoint(medium only){
+      padding-left: 0.75rem;
+    }
+    @include breakpoint(small down){
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+    h3 {
+      color: $primary-color;
+      @include breakpoint(medium down){
+        font-size: rem-calc(18px);
+      }
+    }
+  }
+  .instagram-nickname {
+    text-align: right;
+    @include breakpoint(medium only){
+      padding-right: 0.75rem;
+    }
+    @include breakpoint(small down){
+      text-align: center;
+      padding: 0 0.5rem;
+    }
+    h3 {
+      font-weight: 300;
+      font-size: rem-calc(40px);
+      color: $primary-color;
+      @include breakpoint(medium down){
+        font-size: rem-calc(18px);
+      }
+    }
+  }
+  .sbi-owl-nav {
+     > div {
+       top: auto !important;
+     }
+    .sbi-owl-prev {
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background: url('images/icons/chevron-prev.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    .sbi-owl-next {
+      &:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        background: url('images/icons/chevron-next.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+    > div {
+      top:auto;
+      bottom: -3rem;
+      box-shadow: none;
+      background: transparent;
+      border:1px solid $primary-color;
+      svg {
+        path {
+          // fill: $primary-color;
+          fill: transparent;
+        }
+      }
+    }
+  }
+}

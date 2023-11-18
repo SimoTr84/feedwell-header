@@ -1,0 +1,38 @@
+body {
+  &.category {
+    .page-title-wrap {
+      padding: 1rem 0;
+
+    }
+    .go-back {
+      margin-bottom: 2rem;
+      a {
+        i {
+          padding-right: 0.5rem;
+        }
+      }
+    }
+    article {
+      margin-bottom: 2rem;
+      .post-title {
+        text-transform: uppercase;
+      }
+      .post-content {
+        padding: 1rem 0;
+      }
+      .post-meta {
+        padding: 0.5rem 0;
+        font-size: 0.75rem;
+        color: $schooner;
+      }
+      .post-short-description {
+        p {
+          color: $primary-color;
+          line-height: 1.2rem;
+          font-size: 0.85rem;
+        }
+      }
+
+    }
+  }
+}

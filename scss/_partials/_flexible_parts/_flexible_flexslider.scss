@@ -1,0 +1,84 @@
+//flexslider
+//custom style
+section {
+  &.flexible-flexslider {
+    overflow: hidden;
+    .grid-container {
+      &.full {
+        .flexslider{
+          .slide-outer{
+            .slide-inner {
+              padding: 10rem 0;
+
+              @include breakpoint(medium down){
+                padding: 10rem 5rem;
+              }
+              @include breakpoint(large up){
+                padding: 10rem 5rem;
+              }
+            }
+          }
+        }
+      }
+
+      .flexslider {
+        padding: 0;
+        margin: 0;
+        border:0;
+        .slide-outer{
+          .slide-inner {
+            padding: 10rem 7.5rem;
+            @include breakpoint(medium down){
+              padding: 10rem 5rem;
+            }
+            @include breakpoint(large up){
+              padding: 10rem 5rem;
+            }
+          }
+        }
+        .flex-control-nav {
+          bottom: -20px;
+        }
+        .flex-direction-nav {
+          a {
+            width: 45px;
+            height: 45px;
+            &:before {
+
+            }
+          }
+          .flex-nav-prev {
+            a {
+              left: 2rem;
+              opacity: 1;
+              font-size: 0;
+              &:before {
+                content:'';
+                background: url('images/slider/left-arrow.svg');
+                width: 45px;
+                height: 45px;
+                position: absolute;
+              }
+            }
+          }
+          .flex-nav-next {
+            a {
+              right: 2rem;
+              opacity: 1;
+              font-size: 0;
+              &:before {
+                content:'';
+                background: url('images/slider/right-arrow.svg');
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                left: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

@@ -1,0 +1,566 @@
+body {
+  &.admin-bar {
+    section {
+      &#order-online {
+        @include breakpoint(small down){
+          margin-top: 3rem;
+        }
+      }
+    }
+  }
+}
+
+
+//google autopopulate
+.pac-container {
+  border-radius: 1rem;
+  &:after {
+    background-image: none;
+    display: none;
+  }
+  .pac-item {
+    padding: 0.25rem;
+  }
+}
+.check-results {
+  text-align: center;
+  font-size: 0.75rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+  span {
+    &.success {
+      color: $primary-color;
+    }
+    &.failed {
+      color: red;
+    }
+  }
+}
+
+select {
+  padding: 0.35em 1.25em;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  color: $schooner;
+  background: $white;
+  border-color: $schooner;
+  outline: none;
+  box-shadow: none;
+  @include breakpoint(medium up){
+    margin-bottom: 0;
+  }
+  &::placeholder {
+    color: $schooner;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  text-transform: uppercase;
+  height: 50px;
+  -moz-appearance: button;
+  -webkit-appearance: button;
+
+  text-align: center;
+}
+.custom-login-modal {
+  width: 100%;
+  position: relative;
+  &:active,
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  @include breakpoint(xxlarge up){
+    max-width: 65%;
+  }
+  @include breakpoint(xlarge only){
+    max-width: 75%;
+  }
+  @include breakpoint(large only){
+    max-width: 85%;
+  }
+  @include breakpoint(medium only){
+    max-width: 100%;
+  }
+  @include breakpoint(small down){
+    max-width: 100%;
+  }
+  button {
+    &.close-button {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      z-index: 300;
+      color: $primary-color;
+      font-size: 1rem;
+      i {
+        color: $primary-color;
+      }
+    }
+  }
+}
+body {
+  .pac-container {
+    z-index: 999999;
+  }
+}
+.need-more-information {
+  background: $light-gray;
+  .title {
+    margin-bottom: 2rem;
+    @include breakpoint(small down){
+      margin-bottom: 1rem;
+    }
+  }
+  padding: 1rem 3rem;
+  .button-group {
+    &.stacked-for-medium {
+      @include breakpoint(medium only){
+        a {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
+.local-pickup-day-and-time {
+  .pickup-days-group {
+    label {
+      font-size: 0.65rem;
+    }
+  }
+}
+.local-pickup-locations {
+  .button-group {
+    display: block;
+    .button {
+      @include breakpoint(small down){
+        font-size: 0.75rem;
+      }
+    }
+
+    input {
+      display: none;
+      &:checked {
+        + label {
+          background-color: $blue-1000;
+        }
+      }
+    }
+    label {
+      @include breakpoint(small down){
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.order-options {
+  input {
+    display: none;
+    &:checked {
+      + label {
+        background-color: $secondary-color;
+      }
+    }
+  }
+}
+section {
+  &#order-online {
+    position: relative;
+    background: $light-gray;
+
+    input {
+      &#date-of-event {
+        text-align: center;
+      }
+    }
+    @include breakpoint(small down){
+      padding: 0 0;
+    }
+    .errors {
+      font-size: 0.7rem;
+      a {
+        display: block;
+        font-size: 0.7rem;
+        text-decoration: underline;
+      }
+    }
+    .output-wrapper,
+    .final-message {
+      position: relative;
+      padding: 10rem 10rem;
+      text-align: center;
+      font-weight: 500;
+      @include breakpoint(medium only){
+        padding: 4rem 2rem;
+      }
+      @include breakpoint(small down){
+        padding: 2rem 2rem;
+      }
+      p {
+        font-size: rem-calc(50px);
+        color: $primary-color;
+        line-height: 4rem;
+        @include breakpoint(medium only){
+          font-size: rem-calc(30px);
+          line-height: 2.5rem;
+        }
+        @include breakpoint(small down){
+          font-size: rem-calc(25px);
+          line-height: 2rem;
+        }
+      }
+      a {
+        font-size: rem-calc(50px);
+        color: $primary-color;
+        text-decoration: underline;
+        line-height: 4rem;
+        @include breakpoint(medium only){
+          font-size: rem-calc(30px);
+          line-height: 2.5rem;
+        }
+        @include breakpoint(small down){
+          font-size: rem-calc(25px);
+          line-height: 2rem;
+        }
+      }
+
+      .results {
+        #pickup {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0rem;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          padding-left: 2rem;
+          @include breakpoint(medium down){
+            top: 90%;
+            transform: translateY(-90%);
+          }
+        }
+        #previous {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: -1rem;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          padding-left: 2rem;
+          @include breakpoint(medium down){
+            top: 90%;
+            transform: translateY(-90%);
+          }
+        }
+      }
+    }
+    .title {
+      margin-bottom: 2rem;
+      @include breakpoint(small down){
+        margin-bottom: 1rem;
+      }
+    }
+    .step-section {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    .set-pick-up-locations {
+      h3 {
+        margin-bottom: 2rem;
+      }
+      select {
+        margin-bottom: 1rem;
+        // max-width: 50%;
+        // @include breakpoint(large only){
+        //   max-width: 60%;
+        // }
+        // @include breakpoint(medium down){
+        //   max-width: 100%;
+        // }
+      }
+      .button-group {
+        display: block;
+      }
+      .date-wrapper {
+        margin-bottom: 2rem;
+        input {
+          display: block;
+          text-align: center;
+          &[type="text"]{
+            @extend .input_style_real_peas;
+          }
+        }
+      }
+      input {
+        display: none;
+        &:checked {
+          + label {
+            background-color: $secondary-color;
+          }
+        }
+      }
+    }
+    #step-one {
+      .new-customer {
+        position: relative;
+        .billing-fields {
+          input {
+            &#billing-address-unit {
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+        .local-pickup-locations {
+          .button-group {
+
+          }
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: 0;
+          height: calc(100% - 8rem);
+          width: 2px;
+          background-color: $primary-color;
+          @include breakpoint(small down){
+            display: none;
+          }
+        }
+      }
+      .new-customer,
+      .returning-customer {
+        position: relative;
+        padding: 4rem 6rem;
+
+        .loader {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+        @include breakpoint(xlarge up){
+          @media (min-height: 500px) and (max-height: 1000px){
+            padding: 1rem 2rem;
+          }
+        }
+        @include breakpoint(large only){
+          padding: 4rem 3rem;
+          @media (min-height: 768px) and (max-height: 1000px){
+            padding: 1rem 2rem;
+          }
+        }
+        @include breakpoint(medium only){
+          padding: 4rem 3rem;
+        }
+        @include breakpoint(small down){
+          padding: 1.5rem 1rem 0 1rem;
+        }
+        text-align: center;
+      }
+      label {
+        line-height: normal;
+        &:hover {
+          cursor: pointer;
+        }
+        a {
+          text-decoration: underline;
+          @include transition(.3s);
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+      input {
+        &[type="checkbox"]{
+          vertical-align: middle;
+          @extend .checkbox_style_one;
+        }
+        &#delivery-address-unit {
+          margin-bottom: 1.5rem;
+        }
+      }
+      button {
+        &.check_availability {
+          @extend %button_primary_primary_hollow;
+          font-size: 0.75rem;
+        }
+      }
+    }
+    #step-two-returning-customer {
+      @include breakpoint(small down){
+        padding: 0 1rem;
+      }
+      .part-one {
+        padding: 2.5rem 0;
+      }
+      .loader {
+        margin-top: 0;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .form {
+      position: relative;
+      padding: 0 1rem;
+      @include breakpoint(small down){
+        padding: 0 0;
+      }
+      .user-input-fields {
+        position: relative;
+        .billing-fields,
+        .delivery-fields {
+          .check-results {
+            padding-top: 0;
+            color: $primary-red;
+            span {
+              padding: 0.25rem;
+              margin-top: 0.25rem;
+              display: block;
+              @include transition(.3s);
+            }
+          }
+        }
+        .first-delivery-address-row {
+          input {
+            &#delivery-address-unit {
+              margin-bottom: 1.5rem;
+            }
+          }
+        }
+        .new-delivery-address-row {
+
+
+          input {
+            text-align: center;
+            &:first-child {
+              margin-bottom: 1.5rem;
+            }
+            &#delivery-address {
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+        label {
+          text-align: center;
+          color: $primary-color;
+          font-size: 0.75rem;
+          font-weight: 300;
+          margin-bottom: 0.25rem;
+        }
+        .action-control-wrapper {
+          text-align: right;
+          padding: 0.5rem 0;
+          label {
+            display: inline-block;
+            vertical-align: text-bottom;
+            padding-right:1rem;
+          }
+          button {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+        &.in-active {
+          &:after {
+            position: absolute;
+            content:"";
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 300;
+            background: rgba($light-gray, 0.75);
+          }
+          &:hover {
+            cursor: not-allowed;
+          }
+        }
+      }
+    }
+    form {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          margin-bottom: 1rem;
+        }
+      }
+      input {
+        &#wdap_type_location {
+          border-top-left-radius: 2rem !important;
+          border-bottom-left-radius: 2rem !important;
+        }
+        &[type="password"],
+        &[type="date"],
+        &[type="email"],
+        &[type="text"]{
+          @extend .input_style_real_peas;
+          text-align: center;
+        }
+      }
+    }
+    label {
+      &.empty {
+        border-color: $primary-red !important;
+      }
+    }
+    input {
+      &.empty {
+        border-color: $primary-red !important;
+      }
+    }
+  }
+}
+
+.update-local-pickup {
+  border:0;
+  padding: 2rem 2rem 1rem 2rem;
+  .action-control {
+    text-align: center;
+  }
+  input {
+    &.date-of-pickup {
+      @extend .input_style_real_peas;
+      margin-bottom: 1rem;
+      text-align: center;
+      &::placeholder {
+        text-align: center;
+      }
+    }
+  }
+  .select-time-section {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  .update-results {
+    text-align: center;
+  }
+  .local-pickup-day-and-time {
+
+    margin-bottom: 1rem;
+    .pickup-time-group {
+      width: 100%;
+      select {
+        width: 100%;
+      }
+    }
+  }
+  .update-form {
+    .loader-wrapper {
+      .loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

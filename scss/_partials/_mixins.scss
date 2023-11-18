@@ -1,0 +1,422 @@
+
+/* Easy border radius mixin
+========================================== */
+
+@mixin border-radius($radius){
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+
+/* create a simple transition effect
+========================================== */
+
+@mixin transition($speed) {
+  -webkit-transition: all $speed ease;
+  -moz-transition: all $speed ease;
+  -ms-transition: all $speed ease;
+  -o-transition: all $speed ease;
+  transition: all $speed ease;
+}
+
+@mixin no-shadow {
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+
+
+/* Rotate an element
+========================================== */
+@mixin rotate-me($deg) {
+  -ms-transform: rotate($deg + deg); /* IE 9 */
+  -webkit-transform: rotate($deg + deg); /* Chrome, Safari, Opera */
+  transform: rotate($deg + deg);
+}
+
+/* Transform
+========================================== */
+@mixin transform($args){
+  -webkit-transform: $args;
+  transform: $args;
+}
+
+/* block quote text styles
+========================================== */
+
+@mixin block-quote-text($size: $body-size, $line:$body-line) {
+  font-size:$size;
+  line-height:$line;
+  font-family:$secondary;
+  margin:0;
+  padding:0;
+}
+
+
+
+//push auto
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+
+//pseudo
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+
+//placeholders
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+//Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+}
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+}
+//box shadow mixin
+
+@mixin box-shadow($shadow1, $shadow2:false) {
+ $params: $shadow1;
+  @if $shadow2
+    { $params: $shadow1, $shadow2; }
+  -webkit-box-shadow: $params;
+     -moz-box-shadow: $params;
+          box-shadow: $params;
+}
+
+
+
+
+@mixin absolutecenter($axis: "both"){
+  position:absolute;
+  @if $axis == "y"{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @if $axis == "x"{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  @if $axis == "both"{
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+}
+
+//paddings and margins
+
+$max: 200;
+$offset: 1;
+$unit: 'px'; // Feel free to change the unit.
+@mixin generate-spacing($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+// Margins
+@include generate-spacing('.mt-', 'margin-top');
+@include generate-spacing('.mr-', 'margin-right');
+@include generate-spacing('.mb-', 'margin-bottom');
+@include generate-spacing('.ml-', 'margin-left');
+@include generate-spacing('.m-', 'margin');
+// Paddings
+@include generate-spacing('.pt-', 'padding-top');
+@include generate-spacing('.pr-', 'padding-right');
+@include generate-spacing('.pb-', 'padding-bottom');
+@include generate-spacing('.pl-', 'padding-left');
+@include generate-spacing('.p-', 'padding');
+
+//font size
+$max: 200;
+$offset: 1;
+$unit: 'px'; // Feel free to change the unit.
+@mixin generate-font-sizes($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+@include generate-font-sizes('.fs-', 'font-size');
+
+
+//padding helpers
+$spaceamounts: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 15, 16, 17, 18, 19, 20, 25, 30, 35, 40, 45, 50, 55, 60); // Adjust this to include the pixel amounts you need.
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  //old classes
+  .padding-#{$space} {
+    padding: #{$space}rem;
+  }
+  .margin-#{$space} {
+    margin: #{$space}rem;
+  }
+  @include breakpoint(small down){
+    .small-margin-#{$space} {
+      margin: #{$space}rem;
+    }
+    .small-padding-#{$space} {
+      padding: #{$space}rem;
+    }
+  }
+  @include breakpoint(medium only){
+    .medium-margin-#{$space} {
+      margin: #{$space}rem;
+    }
+    .medium-padding-#{$space} {
+      padding: #{$space}rem;
+    }
+  }
+  @include breakpoint(large only){
+    .large-margin-#{$space} {
+      margin: #{$space}rem;
+    }
+    .large-padding-#{$space} {
+      padding: #{$space}rem;
+    }
+  }
+  @include breakpoint(xlarge only){
+    .xlarge-margin-#{$space} {
+      margin: #{$space}rem;
+    }
+    .xlarge-padding-#{$space} {
+      padding: #{$space}rem;
+    }
+  }
+  @include breakpoint(xxlarge only){
+    .xxlarge-margin-#{$space} {
+      margin: #{$space}rem;
+    }
+    .xxlarge-padding-#{$space} {
+      padding: #{$space}rem;
+    }
+  }
+
+  @each $side in $sides {
+    .margin-#{$side}-#{$space} {
+      margin-#{$side}: #{$space}rem;
+    }
+    .padding-#{$side}-#{$space} {
+      padding-#{$side}: #{$space}rem;
+    }
+    @include breakpoint(small down){
+      .small-margin-#{$side}-#{$space} {
+        margin-#{$side}: #{$space}rem;
+      }
+      .small-padding-#{$side}-#{$space} {
+        padding-#{$side}: #{$space}rem;
+      }
+    }
+    @include breakpoint(medium only){
+      .medium-margin-#{$side}-#{$space} {
+        margin-#{$side}: #{$space}rem;
+      }
+      .medium-padding-#{$side}-#{$space} {
+        padding-#{$side}: #{$space}rem;
+      }
+    }
+    @include breakpoint(large only){
+      .large-margin-#{$side}-#{$space} {
+        margin-#{$side}: #{$space}rem;
+      }
+      .large-padding-#{$side}-#{$space} {
+        padding-#{$side}: #{$space}rem;
+      }
+    }
+    @include breakpoint(xlarge only){
+      .xlarge-margin-#{$side}-#{$space} {
+        margin-#{$side}: #{$space}rem;
+      }
+      .xlarge-padding-#{$side}-#{$space} {
+        padding-#{$side}: #{$space}rem;
+      }
+    }
+    @include breakpoint(xxlarge only){
+      .xxlarge-margin-#{$side}-#{$space} {
+        margin-#{$side}: #{$space}rem;
+      }
+      .xxlarge-padding-#{$side}-#{$space} {
+        padding-#{$side}: #{$space}rem;
+      }
+    }
+  }
+
+}
+
+//width
+$max: 100;
+$offset: 1;
+$unit: '%'; // Feel free to change the unit.
+@mixin generate-width($className, $styleName) {
+  $i: 0;
+  @while $i <= $max {
+    #{$className + $i} {
+      #{$styleName}: #{$i + $unit};
+    }
+    $i: $i + $offset;
+  }
+}
+
+@include generate-width('.width-', 'width');
+
+@mixin fw-input( $style ){
+  padding: .5rem 1.25rem;
+  height: 2.5rem;
+  @if( $style == 'style-one' ){
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    color: $schooner;
+    background: $white;
+    border-color: $silk;
+    @include breakpoint(medium up){
+      margin-bottom: 0;
+    }
+    &::placeholder {
+      color: $schooner;
+      text-align: left;
+    }
+  }
+
+  @if( $style == 'style-one-small' ){
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    color: $schooner;
+    background: $white;
+    border-color: $silk;
+    @include breakpoint(medium up){
+      margin-bottom: 0;
+    }
+    &::placeholder {
+      color: $schooner;
+      text-align: left;
+      font-size: 0.75rem;
+    }
+  }
+
+
+  @if( $style == 'style-two' ){
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    color: $primary-color;
+    background: $green-100;
+    border-color: $primary-color;
+    @include breakpoint(medium up){
+      margin-bottom: 0;
+    }
+    &::placeholder {
+      color: $primary-color;
+      text-align: left;
+    }
+  }
+  @if( $style == 'style-three' ){
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    color: $primary-color;
+    background: transparent;
+    border-color: $primary-color;
+    @include breakpoint(medium up){
+      margin-bottom: 0;
+    }
+    &::placeholder {
+      color: $primary-color;
+      text-align: left;
+    }
+  }
+  @if( $style == 'submit' ){
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 1px solid transparent;
+    border-radius: $button-radius;
+    margin: 0 0 1rem 0;
+    padding: 0.85em 1em;
+    display: inline-block;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    -webkit-appearance: none;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    word-spacing: 0.15rem;
+    @include transition(.3s);
+    &:active,
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  @if( $style == 'pill' ){
+    background-color: $secondary-color;
+    border-radius: 0.5rem;
+    padding: .5rem;
+    line-height: 1;
+    height: auto;
+    &:hover {
+      cursor: pointer;
+      background-color: $pink-200;
+    }
+    &.selected {
+      background-color: $pink-200;
+    }
+  }
+}
+@mixin checkbox($style) {
+  @if( $style == 'style_one' ) {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: $white;
+    border: 1px solid $primary-color !important;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 0;
+    vertical-align: sub;
+    outline: none;
+    @include transition(.3s);
+    &:before {
+      @include transition(.3s);
+    }
+     &:checked {
+       background-color: $white;
+       &:before {
+          position: absolute;
+          font-size: 16px;
+          left: 5px;
+          top: -1px;
+          content: '\02143';
+          transform: rotate(40deg);
+          color: $primary-color;
+       }
+     }
+  }
+}

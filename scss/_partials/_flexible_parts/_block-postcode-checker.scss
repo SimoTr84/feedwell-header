@@ -1,0 +1,10 @@
+.block-postcode-checker {
+  background-color: $green-100;
+  padding: 1rem 0.75rem !important;
+  &.shop {
+    .grid-container {
+      background-color: transparent !important;
+      border-radius: 0;
+    }
+  }
+}

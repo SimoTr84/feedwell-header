@@ -1,0 +1,43 @@
+section {
+  &.flexible-stores {
+    .single-store {
+      color: $primary-color;
+      margin-bottom: 2rem;
+      .store-title {
+        margin-bottom: 1rem;
+      }
+      .map {
+        min-height: 15rem;
+        margin-bottom: 2rem;
+      }
+      .name {
+        padding: 1rem 0 0 0;
+        text-transform: uppercase;
+        h5 {
+          margin-bottom: 0.25rem;
+        }
+      }
+      .address {
+
+      }
+      .phone {
+        padding: 1rem 0;
+      }
+      .working-hours {
+        padding: 0 0 1rem 0;
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+    .flexible-section-heading {
+      text-align: left;
+      h3 {
+        font-size: rem-calc(48px);
+        color: $primary-color;
+      }
+    }
+  }
+}

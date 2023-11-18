@@ -1,0 +1,26 @@
+.order-processing-response-wrapper {
+  padding: 2.5rem;
+  text-align: center;
+  background: $light-gray;
+  border-radius: 1rem;
+  .cancellation-reason {
+    position: relative;
+    label {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .loader-wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      margin: 0;
+    }
+  }
+}
+#order-processing-finish {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+}

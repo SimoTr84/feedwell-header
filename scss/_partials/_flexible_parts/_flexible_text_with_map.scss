@@ -1,0 +1,30 @@
+.flexible-text-with-map {
+  background-color: $pink-100;
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  padding: 0 0;
+  &__text {
+    padding: 4rem;
+    @include breakpoint(medium down) {
+      padding: 1.5rem;
+    }
+    color: $primary-color;
+    @include breakpoint(medium up) {
+      max-width: 75%;
+    }
+  }
+  &__map {
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(xlarge) {
+      min-height: 600px;
+    }
+    @include breakpoint(medium down) {
+      min-height: 25vh;
+    }
+    iframe {
+      position: absolute;
+      top: -59px;
+    }
+  }
+}

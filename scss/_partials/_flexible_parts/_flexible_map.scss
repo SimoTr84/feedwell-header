@@ -1,0 +1,21 @@
+.flexible-map {
+  background-color: $pink-100;
+  padding: 0 0;
+  &__map {
+    position: relative;
+    overflow: hidden;
+    @include breakpoint(xlarge) {
+      min-height: 600px;
+    }
+    @include breakpoint(medium down) {
+      min-height: 25vh;
+    }
+    iframe {
+      margin-top: -67px;
+      min-height: 700px;
+      @include breakpoint(medium down) {
+        min-height: 25vh;
+      }
+    }
+  }
+}

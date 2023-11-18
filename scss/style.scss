@@ -1,0 +1,130 @@
+//theme info
+@import "_partials/vars";
+@import "_partials/theme_info";
+
+//theme globals
+@import "_partials/globals";
+
+//load foundation
+@import "../node_modules/foundation-sites/scss/foundation";
+@import "../node_modules/foundation-sites/scss/util/util";
+
+// Import Motion-UI from vendor files
+// @import "./node_modules/motion-ui/src/motion-ui";
+
+//foundation settings - uncomment when needed
+//@import '_foundation/settings';
+
+@include add-foundation-colors;
+
+//import motion
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+
+// Select the components you want to use
+@include foundation-global-styles;
+
+// comment what is not needed for the build to reduce the size of the final css file
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-forms;
+@include foundation-button;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+@include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-card;
+// @include foundation-close-button;
+@include foundation-menu;
+@include foundation-menu-icon;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-responsive-embed;
+@include foundation-label;
+// @include foundation-pagination;
+// @include foundation-slider;
+@include foundation-reveal;
+// @include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-visibility-classes;
+// @include foundation-float-classes;
+
+//theme styles
+
+@import "_partials/fonts";
+@import "_partials/loader";
+@import "_partials/mixins";
+
+//flexible parts scss
+@import "_partials/_flexible_parts/flexible_banner";
+@import "_partials/_flexible_parts/flexible_blog_posts_grid";
+@import "_partials/_flexible_parts/flexible_box_with_the_link";
+@import "_partials/_flexible_parts/flexible_call_to_action";
+@import "_partials/_flexible_parts/flexible_content_carousel";
+@import "_partials/_flexible_parts/flexible_cta_testimonials_carousel";
+@import "_partials/_flexible_parts/flexible_flexslider";
+@import "_partials/_flexible_parts/flexible_image_gallery";
+@import "_partials/_flexible_parts/flexible_images_carousel";
+@import "_partials/_flexible_parts/flexible_section_heading";
+@import "_partials/_flexible_parts/flexible_products_grid";
+@import "_partials/_flexible_parts/flexible_testimonials_carousel";
+@import "_partials/_flexible_parts/flexible_text_slider";
+@import "_partials/_flexible_parts/flexible_text";
+@import "_partials/_flexible_parts/flexible_stores";
+@import "_partials/_flexible_parts/flexible_how_it_works";
+@import "_partials/_flexible_parts/flexible_hero_with_product_categories";
+@import "_partials/_flexible_parts/flexible_color_boxes";
+@import "_partials/_flexible_parts/flexible_delivery_locations";
+@import "_partials/_flexible_parts/flexible_text_with_map";
+@import "_partials/_flexible_parts/flexible_map";
+@import "_partials/_flexible_parts/flexible_color_box_with_cta";
+@import "_partials/_flexible_parts/flexible_image_and_text";
+@import "_partials/_flexible_parts/root-category-clients-logos";
+@import "_partials/_flexible_parts/flexible_icons_with_text";
+@import "_partials/_flexible_parts/block-postcode-checker";
+@import "_partials/_flexible_parts/flexible_oz_harvest";
+@import "_partials/_flexible_parts/flexible_video_testimonials";
+@import "_partials/_flexible_parts/flexible_the_difference";
+@import "_partials/_flexible_parts/flexible_faq";
+@import "_partials/_flexible_parts/flexible_lp_text";
+@import "_partials/_flexible_parts/slick";
+@import "_partials/_flexible_parts/flexible-columns-text";
+
+//3rd party scss
+@import "_hamburgers/hamburgers";
+//GDPR
+// @import "_partials/gdpr";
+//default WP styles
+@import "_partials/default_wordpress";
+@import "_partials/helpers";
+//main scss files'
+@import "_partials/notification_bar";
+@import "_partials/single_product";
+@import "_partials/offers_carousel";
+// @import "_partials/cart";
+@import "_partials/cart_widget";
+// @import "_partials/order_online";
+@import "_partials/checkout";
+@import "_partials/my_account";
+@import "_partials/postcode_checker";
+@import "_partials/blog_posts_category_page";
+// @import "_partials/custom_order_processing";
+@import "_partials/shop";
+@import "_partials/single_post_page";
+@import "_partials/food_menu";
+@import "_partials/partnerships";
+@import "_partials/_contact_form_7";
+// @import "_partials/subscribe";
+@import "_partials/buttons";
+@import "_partials/inputs";
+// @import "_partials/instagram_feed";
+// @import "_partials/guest_checkout";
+@import "_partials/refer_a_friend";
+@import "_partials/header";
+@import "_partials/footer";
+@import "_partials/main";
+@import "_partials/category_landing_page";
+@import "_partials/shop_filter";

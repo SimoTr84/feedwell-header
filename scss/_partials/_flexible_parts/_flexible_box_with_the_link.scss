@@ -1,0 +1,81 @@
+//box with the link
+section {
+  &.recipes-find-your-favourites {
+    .text {
+      &.single-box-without-link {
+        .box-inner {
+          padding: 4rem 1rem;
+        }
+      }
+    }
+  }
+  &.flexible-box-with-link {
+    .single-box-with-link {
+      .box-wrapper {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        .box-inner {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+      }
+      &.box-with-overlay-layer {
+        position: relative;
+        .box-inner {
+          z-index: 3;
+          @include transition(.3s);
+        }
+        .box-wrapper {
+          opacity: 1;
+          visibility: visible;
+          &:after {
+            content: '';
+            background: rgba($black, 0.25);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            top: 0;
+            left: 0;
+          }
+        }
+        .box-inner-overlay-layer {
+          opacity: 0;
+          visibility: hidden;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top:0;
+          left: 0;
+          z-index: 7;
+          @include transition(.3s);
+          .overlay-layer-content {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      a {
+        position: relative;
+        z-index: 5;
+        &:hover {
+          cursor: pointer;
+          > .box-wrapper {
+            .box-inner-overlay-layer {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+}

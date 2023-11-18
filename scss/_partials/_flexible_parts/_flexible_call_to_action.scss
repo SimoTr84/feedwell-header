@@ -1,0 +1,39 @@
+//call to action
+section {
+  &.flexible-call-to-action {
+    text-align: center;
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+    border-top: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
+    
+    h2,
+    h3 {
+      @include breakpoint(large up){
+        font-size: rem-calc(80px);
+      }
+      @include breakpoint(medium only){
+        font-size: rem-calc(55px);
+      }
+      @include breakpoint(small down){
+        font-size: rem-calc(45px);
+        br {
+          display: none;
+        }
+      }
+      margin-bottom: 1.5rem;
+      color: $orange-1000;
+    }
+
+    p {
+      @include breakpoint(large up) {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+    }
+
+    .action-control {
+      margin-top: 1rem;
+    }
+  }
+}

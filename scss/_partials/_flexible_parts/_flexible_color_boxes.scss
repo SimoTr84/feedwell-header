@@ -1,0 +1,30 @@
+.block-color-boxes {
+  padding: 0 0;
+  .box {
+    padding: 4rem;
+    box-shadow: 0px 0px 0px 1px $primary-color;
+    background-color: $pink-100;
+    @include breakpoint(medium down) {
+      padding: 1.5rem;
+    }
+    &__title {
+      h1, h2, h3, h4 {
+        color: $primary-color;
+        line-height: 1;
+        @include breakpoint(medium down) {
+          font-size: rem-calc(36px);
+          br {
+            display: none;
+          }
+        }
+      }
+      margin-bottom: 1.5rem;
+    }
+    &__text {
+      color: $primary-color;
+      @include breakpoint(medium up) {
+        max-width: 75%;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+section {
+  &.flexible-cta-testimonials-carousel {
+    .testimonial-outer {
+      &:focus,
+      &:active {
+        box-shadow: none;
+        outline: none;
+      }
+
+      .testimonial-inner {
+        padding: 5rem;
+      }
+    }
+  }
+}
+
+
+//cta modal
+.cta-modal {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}

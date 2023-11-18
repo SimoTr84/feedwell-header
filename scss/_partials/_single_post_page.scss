@@ -1,0 +1,57 @@
+body {
+  &.single-post {
+    main {
+      padding: 7rem 0;
+      background: $light-gray;
+      article {
+        .post-meta {
+          padding: 2rem 0;
+          text-align: center;
+          span {
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+          }
+        }
+        .post-title-wrap {
+          margin-top: 2rem;
+          text-align: center;
+        }
+        .featured-image {
+          padding: 2rem 0;
+          img {
+            width: 100%;
+          }
+        }
+        .post-content {
+          padding: 2rem 4rem;
+          color: $primary-color;
+          @include breakpoint(medium down){
+            padding: 1rem 0;
+          }
+        }
+        .share {
+          padding: 0rem 4rem;
+          ul {
+            li {
+              &.title {
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+      .go-back {
+        margin-top: 2rem;
+        padding: 0rem 4rem;
+        a {
+          i {
+            vertical-align: text-bottom;
+            padding-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

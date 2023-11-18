@@ -1,0 +1,265 @@
+//my account login form
+body {
+  &.woocommerce-account {
+    a {
+      &.button {
+        text-decoration: none;
+      }
+    }
+    .address_book {
+      .add-new-address {
+        margin-top: 2rem;
+        display: none;
+      }
+      .wc-address-book-address {
+        width: 100%;
+        padding: 1rem 0;
+        padding-left: 0px;
+        border-left: 1px solid $primary-color;
+        padding-left: 1rem;
+        margin: 1rem 0;
+      }
+    }
+
+    .woocommerce-Addresses {
+      .woocommerce-Address {
+        margin-bottom: 2rem;
+      }
+    }
+    .woocommerce {
+
+    }
+    h2 {
+      font-size: 1.4rem;
+
+    }
+    form {
+      &.woocommerce-form-login {
+        text-align: center;
+        input {
+          &[type="checkbox"]{
+            @extend .checkbox_style_one;
+            vertical-align: middle;
+          }
+          &[type="password"],
+          &[type="date"],
+          &[type="email"],
+          &[type="text"]{
+            @extend .input_style_real_peas;
+          }
+        }
+      }
+    }
+  }
+}
+@include breakpoint(small down) {
+  .my-account {
+    .content-type-text {
+      .woocommerce {
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+
+    .flexible-section-heading {
+      text-align: center;
+    }
+    .woocommerce-form-login__rememberme {
+      margin-bottom: 1rem;
+    }
+    form {
+      &.login {
+        .woocommerce-form-login__submit {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+nav {
+  &.woocommerce-MyAccount-navigation {
+    ul {
+      list-style: none;
+      margin-left: 0;
+      @include breakpoint(small down){
+        margin-bottom: 0;
+      }
+      li {
+        @include breakpoint(small down){
+          display: inline-block;
+          padding: 0.5rem;
+        }
+        &.is-active {
+          a {
+            &:after {
+              position: absolute;
+              opacity: 1;
+              content: "";
+              background: rgba($secondary-color, 0.75);
+              width: 100%;
+              left: 0;
+              top: calc(100% - 0.85rem);
+              height: 0.35rem;
+              z-index: -1;
+            }
+          }
+        }
+        a {
+          font-weight: 500;
+          position: relative;
+          @include transition(.3s);
+          padding: 0.45rem 0;
+          &:after {
+            opacity: 0;
+            position: absolute;
+            content: "";
+            background: rgba($secondary-color, 0.75);
+            width: 100%;
+            left: 0;
+            top: calc(100% - 0.85rem);
+            height: 0.35rem;
+            @include transition(.3s);
+          }
+          &:hover {
+            &:after {
+              opacity: 1;
+              z-index: -1;
+            }
+          }
+        }
+      }
+    }
+    @include breakpoint(medium up){
+      @include grid-column(3 of 12);
+    }
+    @include breakpoint(small down){
+      @include grid-column(12 of 12);
+      background-color: $light-gray;
+    }
+  }
+}
+.woocommerce-EditAccountForm {
+  label {
+    font-weight: bold;
+    color: $primary-color;
+    font-size: 0.85rem;
+  }
+}
+.woocommerce-MyAccount-content {
+  .add-new-address {
+    display: none;
+  }
+  .woocommerce-address-fields {
+    #shipping_state_field {
+      position: relative;
+      &:after {
+        content: "";
+        background-color: transparent;
+        z-index: 9000;
+        width: 100%;
+        height: 100px;
+        cursor: not-allowed;
+        top: 0;
+        position: absolute;
+      }
+    }
+    #shipping_address_1_field,
+    // #shipping_address_2_field,
+    #shipping_city_field,
+    #shipping_state_field,
+    #shipping_postcode_field {
+      input,
+      select {
+        cursor: not-allowed;
+        background-color: $light-gray !important;
+        &:hover {
+          cursor: not-allowed;
+        }
+        &:disabled {
+          background-color: $light-gray !important;
+        }
+      }
+    }
+    #shipping_state_field {
+      .select2-selection {
+        cursor: not-allowed;
+        background: $light-gray;
+        &:active,
+        &:focus {
+          box-shadow: none;
+          outline: none;
+        }
+        &:hover {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+  a {
+    text-decoration: underline;
+  }
+  @include breakpoint(medium up){
+    @include grid-column(9 of 12);
+
+  }
+  @include breakpoint(small down){
+    margin-top: 2rem;
+    @include grid-column(12 of 12);
+  }
+  input {
+    &[type="password"],
+    &[type="date"],
+    &[type="email"],
+    &[type="text"]{
+      @extend .input_style_real_peas;
+    }
+  }
+  table {
+    border:0;
+    border-collapse: unset;
+    border-spacing: 0;
+    margin-bottom: 3rem;
+    &.order_details {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-top: 1rem;
+        li {
+          line-height: initial;
+          .wc-item-meta-label,
+          p {
+            display: inline;
+            line-height: initial;
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  thead {
+    background: $primary-color;
+    th {
+      color: white;
+      font-weight: 300;
+    }
+  }
+  thead,
+  tbody{
+    border:0;
+    td {
+      border: 0;
+    }
+  }
+  tfoot {
+    background: transparent;
+  }
+}
+.my-account {
+  #customer_login {
+    .u-column2 {
+      display: none;
+    }
+  }
+}

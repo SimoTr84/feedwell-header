@@ -1,0 +1,60 @@
+.woocommerce-store-notice {
+  display: none !important;
+}
+.notification-bar {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  text-align: center;
+  .cell {
+    display: flex;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+  }
+  @include breakpoint(small down){
+    padding: 0.25rem 0.25rem;
+  }
+  p {
+    line-height: inherit;
+    display: inline;
+    margin-bottom: 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    font-size: rem-calc(14px);
+    @include breakpoint(small down) {
+      font-size: rem-calc(12px);
+    }
+  }
+  a {
+    color: $white;
+    @include transition(.3s);
+    &:hover {
+      text-decoration: underline;
+      color: $secondary-color;
+    }
+  }
+  .close-bar {
+    position: relative;
+    margin-left: 1rem;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    svg {
+      width: 0.5rem;
+      height: 0.5rem;
+      vertical-align: middle;
+      path {
+        fill: $white;
+        @include transition(.3s);
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          fill: $secondary-color;
+        }
+      }
+    }
+  }
+}

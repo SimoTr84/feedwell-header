@@ -1,0 +1,65 @@
+.lp-text {
+  position: relative;
+  background-color: $pink-100;
+  padding: 0 0;
+  box-shadow: 0px 0px 0px 1px $primary-color;
+
+  .heading {
+    h2,
+    h3,
+    h4 {
+      @include breakpoint(large up){
+        font-size: rem-calc(80px);
+      }
+      @include breakpoint(medium only){
+        font-size: rem-calc(55px);
+      }
+      @include breakpoint(small down){
+        font-size: rem-calc(45px);
+        text-align: center;
+        br {
+          display: none;
+        }
+      }
+      color: $primary-color;
+    }
+  }
+
+  .grid-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  &__image {
+    @include breakpoint(medium down) {
+      display: none;
+    }
+    img {
+      position: absolute;
+      height: 100%;
+    }
+  }
+  .shape-1 {
+    top: 0;
+    left: 0;
+    max-height: 20vw;
+  }
+  .shape-2 {
+    bottom: 0;
+    right: 0;
+    left: 8rem;
+    max-height: 20vw;
+  }
+  h3 {
+    font-size: rem-calc(49px);
+    margin-bottom: 1.5rem;
+  }
+  &__text {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color: $primary-color;
+    @include breakpoint(medium down) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}

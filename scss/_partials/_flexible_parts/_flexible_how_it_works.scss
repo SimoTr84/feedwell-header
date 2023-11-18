@@ -1,0 +1,16 @@
+.flexible-how-it-works {
+  padding: 2rem 0 3rem;
+  background-color: $pink-100;
+  .item {
+    .title {
+      color: $orange-800;
+      font-family: $header-font-family;
+      font-size: 5rem;
+    }
+    .text {
+      p {
+        line-height: normal;
+      }
+    }
+  }
+}

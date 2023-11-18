@@ -1,0 +1,160 @@
+.offers {
+  padding: 4rem 2rem;
+  &:before {
+    content: "New New New New New New New New New New New New";
+    position: absolute;
+    top: -3rem;
+    left: -10rem;
+    width: 1000%;
+    font-size: rem-calc(200px);
+    color: $white;
+    font-weight: bold;
+    z-index: 0;
+    @include breakpoint(small down){
+      font-size: rem-calc(100px);
+      top: -2rem;
+      left: -40rem;
+    }
+  }
+  &:after {
+    content: "New New New New New New New New New New New New";
+    position: absolute;
+    bottom: -5.5rem;
+    left: -6rem;
+    width: 1000%;
+    font-size: rem-calc(200px);
+    color: $white;
+    font-weight: bold;
+    z-index: 0;
+    @include breakpoint(small down){
+      font-size: rem-calc(100px);
+      bottom: -3rem;
+      left: -45rem;
+    }
+  }
+  .slick-slide {
+    img {
+      width: 100%;
+    }
+  }
+  .section-title {
+    position: relative;
+    z-index: 10;
+  }
+  @include breakpoint(medium only){
+    padding: 3rem 0 2rem 0;
+  }
+  @include breakpoint(small down){
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .offers-carousel {
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    &.slick-initialized {
+      opacity: 1;
+    }
+    @include breakpoint(medium up){
+      padding: 0 3rem;
+    }
+    @include breakpoint(small down){
+      padding: 0 2rem;
+    }
+    .action-controls {
+      margin-bottom: auto;
+    }
+    .offer-wrapper {
+      padding: 0 1rem;
+      @include breakpoint(small down){
+        padding: 0 0.5rem;
+      }
+      .offer-heading {
+        h4 {
+          @include breakpoint(small down){
+            font-size: rem-calc(16px);
+          }
+        }
+      }
+      .inner-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate( -50%, -50% );
+        visibility: 0;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($primary-color, 0.75);
+        @include transition(.3s);
+        display: flex;
+        flex-direction: column;
+      }
+      .text {
+        margin-top: auto;
+        p {
+          line-height: 1.2;
+        }
+        @include breakpoint(small down){
+          display: none;
+        }
+      }
+      &:hover {
+        .inner-content {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    .single-offer {
+      &:active,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      .offer-wrapper {
+        position: relative;
+      }
+    }
+    .slick-arrow {
+      top: 35%;
+      transform: translateY(-35%);
+      @include breakpoint(medium down){
+        top: 42.5%;
+        transform: translateY(-42.5%);
+      }
+      border-radius: 2rem;
+      border: 1px solid $primary-color;
+      width: 1.5rem;
+      height: 1.5rem;
+      &.slick-prev {
+        left: 0.5rem;
+        &:before {
+          background: url("images/slider/left-arrow-primary.svg");
+          background-repeat: no-repeat;
+          background-position: center center;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+          width: 0.95rem;
+          height: 0.95rem;
+        }
+      }
+      &.slick-next {
+        right: 0.5rem;
+        &:before {
+          background: url("images/slider/right-arrow-primary.svg");
+          width: 0.95rem;
+          height: 0.95rem;
+          background-repeat: no-repeat;
+          background-position: center center;
+          left: 50%;
+          top: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}

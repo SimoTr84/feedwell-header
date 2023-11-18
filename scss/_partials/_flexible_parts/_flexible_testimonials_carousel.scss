@@ -1,0 +1,13 @@
+section {
+  //testimonials carousel
+  &.flexible-testimonials-carousel {
+    .slick-slider {
+      .slick-slide {
+        &.testimonial-wrapper {
+          padding:2rem 10rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

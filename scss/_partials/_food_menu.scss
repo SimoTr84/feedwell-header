@@ -1,0 +1,303 @@
+body {
+  &.ie-class {
+    section {
+      &#food-menu {
+        @include breakpoint(large up){
+          top: 40px;
+        }
+      }
+    }
+  }
+}
+
+
+
+section {
+  &#mobile-food-menu {
+    padding: 0;
+    display: none;
+    background-color: $light-green;
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    @include transition(.3s);
+    @include breakpoint(medium down){
+      opacity: 0;
+      &.initiated {
+        opacity: 1;
+      }
+    }
+    h3 {
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      @include breakpoint(medium down){
+        margin-top: 1.5rem;
+      }
+    }
+    &.expended {
+      margin-top: -10px !important;
+      @include breakpoint(medium only){
+        margin-top: -15px !important;
+      }
+      @include breakpoint(large only){
+        margin-top: -15px !important;
+      }
+      .mobile-action-control {
+         button {
+           &:after {
+             transform: translateX(-50%) translateY(-25%) rotate(-180deg);
+           }
+         }
+      }
+    }
+    @include breakpoint(medium down){
+      display: block;
+    }
+    nav {
+      padding: 2rem 0;
+      @include breakpoint(small down){
+        padding: 1rem 0;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: inline-block;
+          margin-right: 1rem;
+          @include breakpoint(small down){
+            display: inline-flex;
+            margin-right: 0.25rem;
+            margin-bottom: 0.45rem;
+            width: 48%;
+          }
+          a {
+            padding: 0.85em 1em;
+            border: 1px solid $primary-color;
+            font-weight: 500;
+            border-radius: 2rem;
+            font-family: inherit;
+            font-size: 0.75rem;
+            line-height: 1;
+            text-align: center;
+            cursor: pointer;
+            @include breakpoint(small down){
+              padding: 0.65em 0.75em;
+            }
+            &.active {
+              background-color: $cutty-sark;
+              border-color: $cutty-sark;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    .mobile-action-control {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+      bottom: -1.5rem;
+      button {
+        position: relative;
+        width: 5rem;
+        background-color: $light-green;
+        padding: 1rem 3rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        &:after {
+          content: "\f078";
+          font-family: $global-font-awesome;
+          font-weight: bold;
+          font-size: 1rem;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%, 0);
+          bottom: 0.25rem;
+          @include transition(.3s);
+        }
+        &:active,
+        &:focus {
+          outline: none;
+          box-shadow: none;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &#food-menu {
+    padding: 1rem 0 0.75rem;
+    background-color: $light-green;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    @include transition(.3s);
+    h3 {
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+      @include breakpoint(medium down){
+        margin-top: 1.5rem;
+      }
+    }
+    @include breakpoint(medium down){
+      display: none;
+    }
+    nav {
+      padding: 0.5rem 0;
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: inline-block;
+          margin-right: 1rem;
+          a {
+            padding: 0.85em 1em;
+            border: 1px solid $primary-color;
+            font-weight: 500;
+            border-radius: 2rem;
+            font-family: inherit;
+            font-size: 0.75rem;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 0.55rem;
+            cursor: pointer;
+            display: flex;
+            &.active {
+              background-color: $cutty-sark;
+              border-color: $cutty-sark;
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  &#food-menu-items {
+    background-color: $grey-200;
+    position: relative;
+    @include breakpoint(medium down){
+      padding-top: 0;
+    }
+    @include breakpoint(small down){
+      margin-top: -50px;
+    }
+    .food-menu-items-grid {
+      .food-menu-items-grid-wrapper {
+        margin-top: 1rem;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+      .return-to-top {
+        position: relative;
+        width: 100%;
+        button {
+          position: absolute;
+          right: 2rem;
+          bottom: 1rem;
+          &:active,
+          &:focus {
+            outline: none;
+            box-shadow: none;
+          }
+          &:hover {
+            cursor: pointer;
+          }
+          &:after {
+            content: "\f077";
+            font-family: $global-font-awesome;
+            font-weight: bold;
+            color: $primary-color;
+            font-size: 1rem;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 0.25rem;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            -ms-transition: all 0.3s ease;
+            -o-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+      .food-menu-items-row {
+        padding-top: 3rem;
+      }
+      .category-hero {
+        min-height: 10rem;
+        position: relative;
+        @include breakpoint(small down){
+          min-height: 10rem;
+        }
+        .category-title {
+          position: absolute;
+          bottom: 1rem;
+          h2 {
+            color: $white;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .single-menu-item {
+      padding: 2rem 0;
+      .image {
+        margin-bottom: 2rem;
+        img {
+
+        }
+      }
+      .title {
+        h3 {
+          color: $primary-color;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+      }
+      .description {
+        color: $schooner;
+      }
+      .features {
+        padding: 1rem 0;
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            display: inline-block;
+            margin-bottom: 0.25rem;
+            img {
+              width: 2rem;
+            }
+            span {
+              padding: 0.15rem 0.5rem;
+              font-weight: 400;
+              color: $primary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  &.admin-bar {
+    section {
+      &#food-menu {
+        @include breakpoint(large up){
+          top: 185px;
+        }
+        @include breakpoint(medium only){
+          top: 185px;
+        }
+      }
+    }
+  }
+}
