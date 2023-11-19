@@ -1,4 +1,6 @@
-Foundation.addToJquery($);
+// Foundation.addToJquery($);
+import $ from "jquery";
+import Foundation from "foundation-sites";
 /**
  * Descrip:    Site wide script calls
  */
