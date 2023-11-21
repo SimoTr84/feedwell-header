@@ -18,6 +18,7 @@ Tags: WordPress, Foundation, Bedrock
  * https://get.foundation
  * Licensed under MIT Open Source
  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
 @media print, screen and (min-width: 40em) {
   .reveal.large, .reveal.small, .reveal.tiny, .reveal {
     right: auto;
@@ -6687,6 +6688,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
   display: none;
 }
 
+@font-face {
+  font-family: "Poppins";
+  src: url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+}
 @font-face {
   font-family: "Hackney Vector";
   src: url("./fonts/Hackney-Vector.woff2") format("woff2"), url("./fonts/Hackney-Vector.woff") format("woff"), url("./fonts/Hackney-Vector.ttf") format("truetype");
@@ -32984,12 +32989,14 @@ header.classic-header .desktop-navigation nav ul {
   align-items: center;
 }
 header.classic-header .desktop-navigation nav ul.menu > li.menu-item > a {
+  font-family: "Poppins", "Arial";
   text-transform: uppercase;
   font-weight: 500;
   border: 1px solid transparent;
   border-radius: 2rem;
   transition: all 0.3s ease;
   font-size: 15px;
+  color: #1f493a;
 }
 header.classic-header .desktop-navigation nav ul.menu > li.menu-item > a:hover {
   border: 1px solid #1f493a;
